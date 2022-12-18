@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800&display=swap');
+/* connect font */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Nunito', sans-serif;
+    background-color: #c25757;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.todo {
+    width: 90vh;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.todo__content {
+}
+
+.todo__title {
+
+}
+
+.todo__new {
+    display: flex;
+    margin: 16px 0 32px;
+    height: 50px;
+}
+
+.todo__new input {
+    margin-right: 15px;
+    font-size: 18px;
+    padding: 8px 16px;
+    flex-grow: 1;
+}
+
+.todo__add {
+    text-align: center;
+    line-height: 50px;
+    font-size: 25px;
+    font-weight: 200;
+    border: 1px solid rgb(0,0,0,.3);
+    height: 50px;
+    width: 50px;
+    color: #FFF;
+    background: #ea5959;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.todo__list > * :not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.todo__task {
+    cursor: default;
+    display: flex;
+    align-items: center;
+    min-height: 25px;
+}
+
+.todo__checkbox {
+    margin-right: 16px;
+}
+
+.todo__task-title {
+    font-size: 20px;
+}
+
+.todo__task-del {
+    color: #f03434;
+    display: none;
+    height: 25px;
+    width: 50px;
+    margin-left: 15px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.todo__task:hover .todo__task-del {
+    display: block;
+}
+
+.todo__checkbox input {
+    display: none;
+}
+
+.todo__checkbox div {
+    cursor:  ;
+    height: 28px;
+    width: 28px;
+    border: 1px solid #ea5959;
+    border-radius: 4px;
+    position: relative;
+    color: #fff;
+}
+
+.todo__checkbox div::after {
+    content: '\1F5F8';
+    margin-top: 2px;
+    text-align: center;
+    font-weight: 700;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+.todo__checkbox input:checked + div{
+    background-color: #ea5959;
+}
+
+.todo__checkbox input:checked + div::after{
+    display: block;
+}
+
+.todo__task_complete .todo__task-title {
+    text-decoration: line-through;
+    color: #a8a5a5;
+}

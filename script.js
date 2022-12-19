@@ -50,7 +50,7 @@ function tasksRender(list) {
         <div id="${task.id}" class="${cls}">
                 <label class="todo__checkbox" >
                     <input type="checkbox" ${checked}">
-                    <div></div>
+                    <div class="todo__checkbox-div"></div>
                 </label>
                     <div class="todo__task-title">${task.text}</div>
                 <div class="todo__task-del">Delete</div>
@@ -60,4 +60,11 @@ function tasksRender(list) {
     })
 
     dom.tasks.innerHTML = htmlList
+}
+
+dom.tasks.onclick = (event) => {
+    const target = event.target
+    if (target.classList.contains('todo__checkbox-div')) {
+        console.log(target.previousElementSibling)
+    }
 }
